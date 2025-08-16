@@ -2,47 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }} - {{ web_title }}</title>
-    {% block stylesfirst %}{% endblock %}
-    <link rel="stylesheet" href="/assets/scss/app.scss" />
-    <link rel="stylesheet" href="/assets/scss/themes/dark/app-dark.scss" />
-    <link rel="shortcut icon" href="/assets/static/images/logo/favicon.svg" type="image/x-icon" />
-    <link rel="shortcut icon" href="/assets/static/images/logo/favicon.png" type="image/png" />
-    {% block styles %}{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Table</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <script src="/assets/static/js/initTheme.js"></script>
-    <div id="app">
-        <div id="sidebar">
-            {% include "src/layouts/sidebar.html" %}
-        </div>
-        <div id="main">
-            <header class="mb-3 d-flex align-items-center justify-content-between px-3" style="height: 56px; border-bottom: 1px solid var(--border-color);">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-                <!-- Dark Mode Toggle Button -->
-                <button id="darkModeToggle" class="btn btn-sm btn-light" aria-label="Toggle dark mode" style="min-width: 40px;">
-                    <i data-feather="moon"></i>
-                </button>
-            </header>
-            {% block content %}{% endblock %}
-            {% include '../partials/footer.html' %}
-        </div>
-    </div>
-    <script src="/assets/static/js/components/dark.js"></script>
-    <!-- <script src="/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
+    <!-- Header -->
+    <header>
+        <h1 class="text-center my-4">Master Table</h1>
+    </header>
 
-    {% if isDev %}
-    <script src="/assets/js/app.js" type="module"></script>
-    {% else %}
-    <script src="/assets/compiled/js/app.js"></script>
-    {% endif %}
+    <!-- Table Section -->
+    <main class="container">
+        <table class="table table-striped" id="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
 
-    {% block js %}{% endblock %}
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2025 My Dashboard</p>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="table.js"></script>
 </body>
 
 </html>
