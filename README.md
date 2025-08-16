@@ -1,136 +1,105 @@
-<h1 align="center">Mazer Dashboard</h1>
+# Mazer Dashboard Customization
 
-![Mazer Screenshot](https://user-images.githubusercontent.com/45036724/167523601-9d20fb17-1989-488f-b619-cb53c0db8898.png)
+Enhanced fork of the *Mazer* Bootstrap 5 admin template with modern UI/UX, dark mode toggle, and data-driven components.
 
-<p align="center">Mazer is an Admin Dashboard Template that can help you develop faster. Made with Bootstrap 5. No jQuery dependency.</p>
-<div align="center">
+## Overview
 
-[![All Contributors](https://img.shields.io/github/contributors/zuramai/mazer)](https://github.com/zuramai/mazer/graphs/contributors)
-![GitHub last commit](https://img.shields.io/github/last-commit/zuramai/mazer.svg)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/zuramai/mazer)
-[![License](https://img.shields.io/github/license/zuramai/mazer.svg)](LICENSE)
+This project demonstrates front-end customization skills by enhancing the original Mazer template with:
+- Statistics dashboard with gradient cards
+- Interactive Chart.js visualization  
+- Dark/Light mode toggle with persistence
+- User management table with live search
+- Recent activity feed with avatars
+- Fully responsive design
 
-</div>
+## Files Modified/Created
 
-<p align="center">
-	<a href="http://zuramai.github.io/mazer/demo">Demo Page</a>&nbsp;&nbsp;&nbsp;
-	<a href="http://zuramai.github.io/mazer/docs">Documentation Page</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/zuramai/mazer/blob/main/README_INDONESIAN.md">Indonesian README</a>&nbsp;&nbsp;&nbsp;
-</p>
+src/
+├── index.html # Main dashboard page
+├── layouts/master.html # Added dark mode toggle
+└── assets/
+├── css/custom.css # All theme and responsive styles
+├── data/data.json # Sample dashboard data
+└── js/
+├── dashboard.js # Dashboard functionality
+├── darkmode.js # Theme toggle logic
+└── table.js # User table with search
 
+text
 
-## Installation
+## Setup Instructions
 
-### Using a ready-made built (recommended)
-
-Download the latest release from the [releases page](https://github.com/zuramai/mazer/releases "releases page").
-Open the index HTML file and explore the source code.
-
-### Building yourself
-
-1. Clone the repository 
-```sh
-git clone https://github.com/zuramai/mazer
-```
+1. Clone repository
+git clone https://github.com/123par/mazer.git
+cd mazer
 
 2. Install dependencies
-```sh
-yarn install
-# OR
-npm install
-```
+npm install --legacy-peer-deps
 
-3. Run it locally
-```sh
+3. Start development server
 npm run dev
-```
 
-4. Open `http://localhost:5173` in your browser
+4. Open browser
+Navigate to http://localhost:5173
+text
 
-### Building with Docker
+## Features Implemented
 
-- Clone the repository `git clone https://github.com/zuramai/mazer`
-- Make sure you have Docker installed and run:
-    - `docker build -t mazer-frontend .`
-    - `docker run -it -d -p 5173:80 --name mazer mazer-frontend`
-    - Open `http://localhost:5173`
-### Using CDN 
-Simple example using CDN from [jsdelivr.net](https://www.jsdelivr.com/).
+### Statistics Cards
+- Gradient backgrounds with modern styling
+- Large metric displays with icons
+- Responsive layout for all screen sizes
 
-```html
-<!DOCTYPE html>
-<html lang="en">
+### Data Visualization
+- Interactive Chart.js line chart
+- Monthly sales data from JSON
+- Auto color-switching for dark mode
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+### Dark/Light Mode
+- Toggle button in navigation
+- Persistent theme preference (localStorage)
+- CSS variables for seamless switching
 
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/svg/favicon.svg" type="image/x-icon">
+### User Management
+- Dynamic table populated from JSON data
+- Real-time search functionality
+- Status badges for user roles
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app-dark.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/iconly.css">
-</head>
+### Recent Activity Feed
+- User avatars with fallback system
+- Timestamp display
+- Hover effects and clean styling
 
-<body>
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/initTheme.js"></script>
-    <!-- Start content here -->
+## Technologies Used
 
-    <!-- End content -->
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/components/dark.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+- *Bootstrap 5* - Layout and components
+- *Chart.js* - Data visualization
+- *Vanilla JavaScript (ES6)* - All functionality
+- *CSS Variables* - Theme system
+- *JSON* - Data source
+- *Vite* - Development server
 
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/js/app.js"></script>
+## How It Works
 
-    <!-- Need: Apexcharts -->
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/pages/dashboard.js"></script>
-</body>
+1. dashboard.js loads data from data.json on page load
+2. Statistics cards populate with real numbers
+3. Chart.js renders interactive line chart
+4. User table displays with search capability
+5. Dark mode toggle switches CSS variables instantly
+6. All components adapt to theme changes
 
-</html>
-```
+## Responsive Design
 
-#### CDN Prefix
+- Mobile-first approach
+- Flexible card layouts
+- Scalable chart containers
+- Touch-friendly interface elements
 
-You can use the url with a prefix like this:
-```
-https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo
-```
+## Browser Compatibility
 
-A simple example:
-```
-https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app.css
-```
+- Chrome 70+
+- Firefox 65+
+- Safari 12+
+- Edge 79+
 
-## Community Mazer-based open sources
-
-- [CodeIgniter 4](https://github.com/irsyadulibad/mazer-codeigniter) by [@irsyadulibad](https://github.com/irsyadulibad)
-- [Laravel Mazer Starter](https://github.com/billalxcode/laravel-mazer-starter) by [@billalxcode](https://github.com/billalxcode)
-- [Nuxt](https://github.com/fzn0x/mazer-nuxt) by [@fzn0x](https://github.com/fzn0x)
-- [React JS Component Library](https://github.com/fachryansyah/react-mazer-ui) by [@fachryansyah](https://github.com/fachryansyah/)
-- [Adonisjs 5](https://github.com/afman42/mazer-adonisjs) by [@afman42](https://github.com/afman42/)
-- [Django](https://github.com/bimbims125/mazer-django) by [@bimbims125](https://github.com/bimbims125/)
-- [Flask](https://github.com/antheiz/mazer-flask) by [@antheiz](https://github.com/antheiz/)
-- [Symfony 6.3 (Mazer 2.1.0)](https://github.com/TheoD02/mazer-symfony-6.3/tree/mazer-2.1.0) by [@theod02](ttps://github.com/TheoD02)
-- [Spring-Thymeleaf](https://github.com/deyhay-enterprise/spring-project-mazer-template) by [@hi-rullah](https://github.com/hi-rullah)
-- [Ruby on Rails](https://github.com/noesya/mazer-rails) by [@noesya](https://github.com/noesya)
-- [Yii2](https://github.com/anovsiradj/yii2-theme-mazer) by [@anovsiradj](https://github.com/anovsiradj)
-- [Next JS](https://github.com/dipras/next-mazer) by [@dipras](https://github.com/dipras)
-- Did you make in another framework or tools? Open up Pull Requests and put yours here! 😃
-
-## Contributing
-
-Please follow [Contributing Guide](./CONTRIBUTING.md) before contributing.
-
-## License
-
-Mazer is under [MIT License](./LICENSE).
-
-## Author
-
-Mazer is created by <a href="https://saugi.me">Saugi</a>.
-
-## Sponsors
-
-![zuramai's sponsors](https://raw.githubusercontent.com/zuramai/static/main/sponsors.svg)
+Repository: https://github.com/123par/mazer
